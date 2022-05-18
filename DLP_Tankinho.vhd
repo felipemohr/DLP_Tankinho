@@ -32,19 +32,36 @@ begin
 
 	contator_process : process (SNBP, SNBT, SNAT, ALNBP_CLK)
 	begin
-		
-		if () then
+
+		-- Verifica se tanque em nível baixo
+		if (SNBT='1' AND SNAT='0') then
+				
+			-- Verifica se há água no poço
+			if (SNBP='0') then
+				-- Mantem alarmes desligados
+				ASNBP <= '0';
+				ALNBP <= '0';
+				
+				-- Liga bomba
+				BH <= '1';
+				-- Mantem bomba ligada enquanto tanque não está cheio
+				while (SNAT = '0') loop
+				end loop;
+
+				-- Desliga bomba
+				BH <= '0';
+
+			else
+				-- Desliga bomba e aciona alarmes
+				BH <= '0';
+
+				ASNBP <= '1';
+				ALNBP <= ALNBP_CLK;
+
+			end if;
 			
-			-- Logica principal
-			
-		
-		else
-			
-			-- Piscar led de aviso
-		
-		end if
+		end if;
 	
 	end process;
 	
 end behavior;
-

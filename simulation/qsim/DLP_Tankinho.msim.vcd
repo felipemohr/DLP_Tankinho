@@ -1,0 +1,143 @@
+$comment
+	File created using the following command:
+		vcd file DLP_Tankinho.msim.vcd -direction
+$end
+$date
+	Wed May 18 15:18:21 2022
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module dlp_tankinho_vhd_vec_tst $end
+$var wire 1 ! ALNBP $end
+$var wire 1 " ALNBP_CLK $end
+$var wire 1 # ASNBP $end
+$var wire 1 $ BH $end
+$var wire 1 % NT_DISPLAY [0] $end
+$var wire 1 & NT_DISPLAY [1] $end
+$var wire 1 ' NT_DISPLAY [2] $end
+$var wire 1 ( NT_DISPLAY [3] $end
+$var wire 1 ) NT_DISPLAY [4] $end
+$var wire 1 * NT_DISPLAY [5] $end
+$var wire 1 + NT_DISPLAY [6] $end
+$var wire 1 , NT_DISPLAY [7] $end
+$var wire 1 - SNAT $end
+$var wire 1 . SNBP $end
+$var wire 1 / SNBT $end
+
+$scope module i1 $end
+$var wire 1 0 gnd $end
+$var wire 1 1 vcc $end
+$var wire 1 2 unknown $end
+$var wire 1 3 devoe $end
+$var wire 1 4 devclrn $end
+$var wire 1 5 devpor $end
+$var wire 1 6 ww_devoe $end
+$var wire 1 7 ww_devclrn $end
+$var wire 1 8 ww_devpor $end
+$var wire 1 9 ww_SNBP $end
+$var wire 1 : ww_SNBT $end
+$var wire 1 ; ww_SNAT $end
+$var wire 1 < ww_ALNBP_CLK $end
+$var wire 1 = ww_BH $end
+$var wire 1 > ww_ASNBP $end
+$var wire 1 ? ww_ALNBP $end
+$var wire 1 @ ww_NT_DISPLAY [0] $end
+$var wire 1 A ww_NT_DISPLAY [1] $end
+$var wire 1 B ww_NT_DISPLAY [2] $end
+$var wire 1 C ww_NT_DISPLAY [3] $end
+$var wire 1 D ww_NT_DISPLAY [4] $end
+$var wire 1 E ww_NT_DISPLAY [5] $end
+$var wire 1 F ww_NT_DISPLAY [6] $end
+$var wire 1 G ww_NT_DISPLAY [7] $end
+$var wire 1 H \~QUARTUS_CREATED_GND~I_combout\ $end
+$var wire 1 I \SNBP~input_o\ $end
+$var wire 1 J \SNBT~input_o\ $end
+$var wire 1 K \SNAT~input_o\ $end
+$var wire 1 L \contator_process~0_combout\ $end
+$var wire 1 M \ASNBP$latch~combout\ $end
+$var wire 1 N \ALNBP_CLK~input_o\ $end
+$var wire 1 O \ALNBP~0_combout\ $end
+$var wire 1 P \ALNBP$latch~combout\ $end
+$var wire 1 Q \ALT_INV_ALNBP_CLK~input_o\ $end
+$var wire 1 R \ALT_INV_SNAT~input_o\ $end
+$var wire 1 S \ALT_INV_SNBT~input_o\ $end
+$var wire 1 T \ALT_INV_SNBP~input_o\ $end
+$var wire 1 U \ALT_INV_ALNBP$latch~combout\ $end
+$var wire 1 V \ALT_INV_ASNBP$latch~combout\ $end
+$var wire 1 W \ALT_INV_ALNBP~0_combout\ $end
+$var wire 1 X \ALT_INV_contator_process~0_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+0-
+0.
+1/
+00
+11
+x2
+13
+14
+15
+16
+17
+18
+09
+1:
+0;
+0<
+0=
+0>
+0?
+xH
+0I
+1J
+0K
+1L
+0M
+0N
+0O
+0P
+1Q
+1R
+0S
+1T
+1U
+1V
+1W
+0X
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+0%
+0&
+0'
+0(
+0)
+0*
+0+
+0,
+$end
+#60000
+0/
+0:
+0J
+1S
+0L
+1X
+#1000000

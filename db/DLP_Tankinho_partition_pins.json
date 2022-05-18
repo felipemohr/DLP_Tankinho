@@ -1,0 +1,33 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ASNBP",
+					"strict" : false
+				},
+				{
+					"name" : "ALNBP",
+					"strict" : false
+				},
+				{
+					"name" : "SNBP",
+					"strict" : false
+				},
+				{
+					"name" : "SNBT",
+					"strict" : false
+				},
+				{
+					"name" : "SNAT",
+					"strict" : false
+				},
+				{
+					"name" : "ALNBP_CLK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
