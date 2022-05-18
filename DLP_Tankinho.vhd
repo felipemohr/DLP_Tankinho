@@ -33,7 +33,7 @@ begin
 	contator_process : process (SNBP, SNBT, SNAT, ALNBP_CLK)
 	begin
 		
-		if (sens_reservatorio = '1') then
+		if () then
 			
 			-- Logica principal
 			
