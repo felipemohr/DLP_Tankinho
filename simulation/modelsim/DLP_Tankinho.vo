@@ -17,10 +17,10 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-// DATE "05/18/2022 15:13:34"
+// DATE "06/08/2022 15:29:09"
 
 // 
-// Device: Altera 5CGXFC7C7F23C8 Package FBGA484
+// Device: Altera 5CEBA4F23C7 Package FBGA484
 // 
 
 // 
@@ -45,24 +45,23 @@ input 	ALNBP_CLK;
 output 	BH;
 output 	ASNBP;
 output 	ALNBP;
-output 	[0:7] NT_DISPLAY;
+output 	[0:6] NT_DISPLAY;
 
 // Design Ports Information
-// BH	=>  Location: PIN_A12,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ASNBP	=>  Location: PIN_L17,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ALNBP	=>  Location: PIN_L19,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NT_DISPLAY[7]	=>  Location: PIN_M22,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NT_DISPLAY[6]	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NT_DISPLAY[5]	=>  Location: PIN_Y22,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NT_DISPLAY[4]	=>  Location: PIN_B22,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NT_DISPLAY[3]	=>  Location: PIN_G18,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NT_DISPLAY[2]	=>  Location: PIN_J22,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NT_DISPLAY[1]	=>  Location: PIN_P6,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// NT_DISPLAY[0]	=>  Location: PIN_H18,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// SNBP	=>  Location: PIN_K17,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// SNBT	=>  Location: PIN_N16,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// SNAT	=>  Location: PIN_M20,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ALNBP_CLK	=>  Location: PIN_M21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BH	=>  Location: PIN_AA2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ASNBP	=>  Location: PIN_L1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ALNBP	=>  Location: PIN_L2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NT_DISPLAY[6]	=>  Location: PIN_AA22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NT_DISPLAY[5]	=>  Location: PIN_Y21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NT_DISPLAY[4]	=>  Location: PIN_Y22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NT_DISPLAY[3]	=>  Location: PIN_W21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NT_DISPLAY[2]	=>  Location: PIN_W22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NT_DISPLAY[1]	=>  Location: PIN_V21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// NT_DISPLAY[0]	=>  Location: PIN_U21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SNBP	=>  Location: PIN_U13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ALNBP_CLK	=>  Location: PIN_U7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SNAT	=>  Location: PIN_T13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SNBT	=>  Location: PIN_V13,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 wire gnd;
@@ -77,19 +76,24 @@ tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
 wire \~QUARTUS_CREATED_GND~I_combout ;
-wire \SNBP~input_o ;
 wire \SNBT~input_o ;
+wire \SNBP~input_o ;
 wire \SNAT~input_o ;
-wire \contator_process~0_combout ;
-wire \ASNBP$latch~combout ;
+wire \comb~0_combout ;
+wire \BH$latch~combout ;
 wire \ALNBP_CLK~input_o ;
 wire \ALNBP~0_combout ;
-wire \ALNBP$latch~combout ;
+wire \NT_DISPLAY[6]~0_combout ;
+wire \NT_DISPLAY[6]$latch~combout ;
+wire \NT_DISPLAY[5]$latch~combout ;
+wire \contator_process~0_combout ;
+wire \NT_DISPLAY[4]$latch~combout ;
+wire \NT_DISPLAY[3]$latch~combout ;
 
 
-// Location: IOOBUF_X54_Y81_N53
+// Location: IOOBUF_X0_Y18_N79
 cyclonev_io_obuf \BH~output (
-	.i(gnd),
+	.i(\BH$latch~combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -103,9 +107,9 @@ defparam \BH~output .open_drain_output = "false";
 defparam \BH~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X89_Y37_N22
+// Location: IOOBUF_X0_Y20_N56
 cyclonev_io_obuf \ASNBP~output (
-	.i(\ASNBP$latch~combout ),
+	.i(\SNBP~input_o ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -119,9 +123,9 @@ defparam \ASNBP~output .open_drain_output = "false";
 defparam \ASNBP~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X89_Y38_N5
+// Location: IOOBUF_X0_Y20_N39
 cyclonev_io_obuf \ALNBP~output (
-	.i(\ALNBP$latch~combout ),
+	.i(\ALNBP~0_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -135,25 +139,9 @@ defparam \ALNBP~output .open_drain_output = "false";
 defparam \ALNBP~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X89_Y36_N39
-cyclonev_io_obuf \NT_DISPLAY[7]~output (
-	.i(gnd),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(NT_DISPLAY[7]),
-	.obar());
-// synopsys translate_off
-defparam \NT_DISPLAY[7]~output .bus_hold = "false";
-defparam \NT_DISPLAY[7]~output .open_drain_output = "false";
-defparam \NT_DISPLAY[7]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-// Location: IOOBUF_X54_Y81_N19
+// Location: IOOBUF_X46_Y0_N36
 cyclonev_io_obuf \NT_DISPLAY[6]~output (
-	.i(gnd),
+	.i(\NT_DISPLAY[6]$latch~combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -167,9 +155,9 @@ defparam \NT_DISPLAY[6]~output .open_drain_output = "false";
 defparam \NT_DISPLAY[6]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X66_Y0_N93
+// Location: IOOBUF_X50_Y0_N53
 cyclonev_io_obuf \NT_DISPLAY[5]~output (
-	.i(gnd),
+	.i(\NT_DISPLAY[5]$latch~combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -183,9 +171,9 @@ defparam \NT_DISPLAY[5]~output .open_drain_output = "false";
 defparam \NT_DISPLAY[5]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X78_Y81_N36
+// Location: IOOBUF_X48_Y0_N93
 cyclonev_io_obuf \NT_DISPLAY[4]~output (
-	.i(gnd),
+	.i(\NT_DISPLAY[4]$latch~combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -199,9 +187,9 @@ defparam \NT_DISPLAY[4]~output .open_drain_output = "false";
 defparam \NT_DISPLAY[4]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X68_Y81_N2
+// Location: IOOBUF_X50_Y0_N36
 cyclonev_io_obuf \NT_DISPLAY[3]~output (
-	.i(gnd),
+	.i(\NT_DISPLAY[3]$latch~combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -215,9 +203,9 @@ defparam \NT_DISPLAY[3]~output .open_drain_output = "false";
 defparam \NT_DISPLAY[3]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X84_Y81_N19
+// Location: IOOBUF_X48_Y0_N76
 cyclonev_io_obuf \NT_DISPLAY[2]~output (
-	.i(gnd),
+	.i(\NT_DISPLAY[4]$latch~combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -231,9 +219,9 @@ defparam \NT_DISPLAY[2]~output .open_drain_output = "false";
 defparam \NT_DISPLAY[2]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X4_Y0_N19
+// Location: IOOBUF_X51_Y0_N36
 cyclonev_io_obuf \NT_DISPLAY[1]~output (
-	.i(gnd),
+	.i(\NT_DISPLAY[5]$latch~combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -247,9 +235,9 @@ defparam \NT_DISPLAY[1]~output .open_drain_output = "false";
 defparam \NT_DISPLAY[1]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X68_Y81_N19
+// Location: IOOBUF_X52_Y0_N53
 cyclonev_io_obuf \NT_DISPLAY[0]~output (
-	.i(gnd),
+	.i(\NT_DISPLAY[5]$latch~combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -263,18 +251,7 @@ defparam \NT_DISPLAY[0]~output .open_drain_output = "false";
 defparam \NT_DISPLAY[0]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOIBUF_X89_Y37_N4
-cyclonev_io_ibuf \SNBP~input (
-	.i(SNBP),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\SNBP~input_o ));
-// synopsys translate_off
-defparam \SNBP~input .bus_hold = "false";
-defparam \SNBP~input .simulate_z_as = "z";
-// synopsys translate_on
-
-// Location: IOIBUF_X89_Y35_N44
+// Location: IOIBUF_X33_Y0_N58
 cyclonev_io_ibuf \SNBT~input (
 	.i(SNBT),
 	.ibar(gnd),
@@ -285,7 +262,18 @@ defparam \SNBT~input .bus_hold = "false";
 defparam \SNBT~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: IOIBUF_X89_Y37_N38
+// Location: IOIBUF_X33_Y0_N41
+cyclonev_io_ibuf \SNBP~input (
+	.i(SNBP),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SNBP~input_o ));
+// synopsys translate_off
+defparam \SNBP~input .bus_hold = "false";
+defparam \SNBP~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X34_Y0_N1
 cyclonev_io_ibuf \SNAT~input (
 	.i(SNAT),
 	.ibar(gnd),
@@ -296,10 +284,165 @@ defparam \SNAT~input .bus_hold = "false";
 defparam \SNAT~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: LABCELL_X88_Y37_N48
+// Location: MLABCELL_X34_Y1_N3
+cyclonev_lcell_comb \comb~0 (
+// Equation(s):
+// \comb~0_combout  = ( \SNAT~input_o  & ( \SNBP~input_o  ) ) # ( !\SNAT~input_o  )
+
+	.dataa(!\SNBP~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\SNAT~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\comb~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \comb~0 .extended_lut = "off";
+defparam \comb~0 .lut_mask = 64'hFFFFFFFF55555555;
+defparam \comb~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X34_Y1_N48
+cyclonev_lcell_comb BH$latch(
+// Equation(s):
+// \BH$latch~combout  = ( !\comb~0_combout  & ( \BH$latch~combout  ) ) # ( !\comb~0_combout  & ( !\BH$latch~combout  & ( \SNBT~input_o  ) ) )
+
+	.dataa(gnd),
+	.datab(!\SNBT~input_o ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(!\comb~0_combout ),
+	.dataf(!\BH$latch~combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BH$latch~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam BH$latch.extended_lut = "off";
+defparam BH$latch.lut_mask = 64'h33330000FFFF0000;
+defparam BH$latch.shared_arith = "off";
+// synopsys translate_on
+
+// Location: IOIBUF_X10_Y0_N92
+cyclonev_io_ibuf \ALNBP_CLK~input (
+	.i(ALNBP_CLK),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\ALNBP_CLK~input_o ));
+// synopsys translate_off
+defparam \ALNBP_CLK~input .bus_hold = "false";
+defparam \ALNBP_CLK~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: MLABCELL_X4_Y12_N33
+cyclonev_lcell_comb \ALNBP~0 (
+// Equation(s):
+// \ALNBP~0_combout  = ( \ALNBP_CLK~input_o  & ( \SNBP~input_o  ) )
+
+	.dataa(!\SNBP~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\ALNBP_CLK~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ALNBP~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ALNBP~0 .extended_lut = "off";
+defparam \ALNBP~0 .lut_mask = 64'h0000000055555555;
+defparam \ALNBP~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X34_Y1_N6
+cyclonev_lcell_comb \NT_DISPLAY[6]~0 (
+// Equation(s):
+// \NT_DISPLAY[6]~0_combout  = ( \SNAT~input_o  & ( !\SNBT~input_o  ) )
+
+	.dataa(gnd),
+	.datab(!\SNBT~input_o ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\SNAT~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\NT_DISPLAY[6]~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \NT_DISPLAY[6]~0 .extended_lut = "off";
+defparam \NT_DISPLAY[6]~0 .lut_mask = 64'h00000000CCCCCCCC;
+defparam \NT_DISPLAY[6]~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X34_Y1_N24
+cyclonev_lcell_comb \NT_DISPLAY[6]$latch (
+// Equation(s):
+// \NT_DISPLAY[6]$latch~combout  = ( \NT_DISPLAY[6]$latch~combout  & ( (!\NT_DISPLAY[6]~0_combout ) # (\SNBP~input_o ) ) ) # ( !\NT_DISPLAY[6]$latch~combout  & ( (!\NT_DISPLAY[6]~0_combout  & !\SNBP~input_o ) ) )
+
+	.dataa(gnd),
+	.datab(!\NT_DISPLAY[6]~0_combout ),
+	.datac(!\SNBP~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\NT_DISPLAY[6]$latch~combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\NT_DISPLAY[6]$latch~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \NT_DISPLAY[6]$latch .extended_lut = "off";
+defparam \NT_DISPLAY[6]$latch .lut_mask = 64'hC0C0C0C0CFCFCFCF;
+defparam \NT_DISPLAY[6]$latch .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X34_Y1_N33
+cyclonev_lcell_comb \NT_DISPLAY[5]$latch (
+// Equation(s):
+// \NT_DISPLAY[5]$latch~combout  = ( \NT_DISPLAY[5]$latch~combout  & ( (\SNBP~input_o ) # (\SNAT~input_o ) ) ) # ( !\NT_DISPLAY[5]$latch~combout  & ( (\SNAT~input_o  & !\SNBP~input_o ) ) )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(!\SNAT~input_o ),
+	.datad(!\SNBP~input_o ),
+	.datae(gnd),
+	.dataf(!\NT_DISPLAY[5]$latch~combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\NT_DISPLAY[5]$latch~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \NT_DISPLAY[5]$latch .extended_lut = "off";
+defparam \NT_DISPLAY[5]$latch .lut_mask = 64'h0F000F000FFF0FFF;
+defparam \NT_DISPLAY[5]$latch .shared_arith = "off";
+// synopsys translate_on
+
+// Location: MLABCELL_X34_Y1_N15
 cyclonev_lcell_comb \contator_process~0 (
 // Equation(s):
-// \contator_process~0_combout  = ( !\SNAT~input_o  & ( \SNBT~input_o  ) )
+// \contator_process~0_combout  = ( \SNAT~input_o  & ( \SNBT~input_o  ) )
 
 	.dataa(gnd),
 	.datab(gnd),
@@ -316,95 +459,60 @@ cyclonev_lcell_comb \contator_process~0 (
 	.shareout());
 // synopsys translate_off
 defparam \contator_process~0 .extended_lut = "off";
-defparam \contator_process~0 .lut_mask = 64'h0F0F0F0F00000000;
+defparam \contator_process~0 .lut_mask = 64'h000000000F0F0F0F;
 defparam \contator_process~0 .shared_arith = "off";
 // synopsys translate_on
 
-// Location: LABCELL_X88_Y37_N39
-cyclonev_lcell_comb ASNBP$latch(
+// Location: MLABCELL_X34_Y1_N39
+cyclonev_lcell_comb \NT_DISPLAY[4]$latch (
 // Equation(s):
-// \ASNBP$latch~combout  = ( \contator_process~0_combout  & ( \ASNBP$latch~combout  & ( \SNBP~input_o  ) ) ) # ( !\contator_process~0_combout  & ( \ASNBP$latch~combout  ) ) # ( \contator_process~0_combout  & ( !\ASNBP$latch~combout  & ( \SNBP~input_o  ) ) )
-
-	.dataa(!\SNBP~input_o ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(gnd),
-	.datae(!\contator_process~0_combout ),
-	.dataf(!\ASNBP$latch~combout ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\ASNBP$latch~combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam ASNBP$latch.extended_lut = "off";
-defparam ASNBP$latch.lut_mask = 64'h00005555FFFF5555;
-defparam ASNBP$latch.shared_arith = "off";
-// synopsys translate_on
-
-// Location: IOIBUF_X89_Y37_N55
-cyclonev_io_ibuf \ALNBP_CLK~input (
-	.i(ALNBP_CLK),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\ALNBP_CLK~input_o ));
-// synopsys translate_off
-defparam \ALNBP_CLK~input .bus_hold = "false";
-defparam \ALNBP_CLK~input .simulate_z_as = "z";
-// synopsys translate_on
-
-// Location: LABCELL_X88_Y37_N51
-cyclonev_lcell_comb \ALNBP~0 (
-// Equation(s):
-// \ALNBP~0_combout  = (\SNBP~input_o  & \ALNBP_CLK~input_o )
-
-	.dataa(!\SNBP~input_o ),
-	.datab(gnd),
-	.datac(gnd),
-	.datad(!\ALNBP_CLK~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\ALNBP~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \ALNBP~0 .extended_lut = "off";
-defparam \ALNBP~0 .lut_mask = 64'h0055005500550055;
-defparam \ALNBP~0 .shared_arith = "off";
-// synopsys translate_on
-
-// Location: LABCELL_X88_Y37_N42
-cyclonev_lcell_comb ALNBP$latch(
-// Equation(s):
-// \ALNBP$latch~combout  = ( \contator_process~0_combout  & ( \ALNBP$latch~combout  & ( \ALNBP~0_combout  ) ) ) # ( !\contator_process~0_combout  & ( \ALNBP$latch~combout  ) ) # ( \contator_process~0_combout  & ( !\ALNBP$latch~combout  & ( \ALNBP~0_combout  
-// ) ) )
+// \NT_DISPLAY[4]$latch~combout  = ( \NT_DISPLAY[4]$latch~combout  & ( \SNBP~input_o  ) ) # ( \NT_DISPLAY[4]$latch~combout  & ( !\SNBP~input_o  & ( \contator_process~0_combout  ) ) ) # ( !\NT_DISPLAY[4]$latch~combout  & ( !\SNBP~input_o  & ( 
+// \contator_process~0_combout  ) ) )
 
 	.dataa(gnd),
 	.datab(gnd),
-	.datac(!\ALNBP~0_combout ),
+	.datac(!\contator_process~0_combout ),
 	.datad(gnd),
-	.datae(!\contator_process~0_combout ),
-	.dataf(!\ALNBP$latch~combout ),
+	.datae(!\NT_DISPLAY[4]$latch~combout ),
+	.dataf(!\SNBP~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\ALNBP$latch~combout ),
+	.combout(\NT_DISPLAY[4]$latch~combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam ALNBP$latch.extended_lut = "off";
-defparam ALNBP$latch.lut_mask = 64'h00000F0FFFFF0F0F;
-defparam ALNBP$latch.shared_arith = "off";
+defparam \NT_DISPLAY[4]$latch .extended_lut = "off";
+defparam \NT_DISPLAY[4]$latch .lut_mask = 64'h0F0F0F0F0000FFFF;
+defparam \NT_DISPLAY[4]$latch .shared_arith = "off";
 // synopsys translate_on
 
-// Location: LABCELL_X60_Y40_N3
+// Location: MLABCELL_X34_Y1_N42
+cyclonev_lcell_comb \NT_DISPLAY[3]$latch (
+// Equation(s):
+// \NT_DISPLAY[3]$latch~combout  = ( \NT_DISPLAY[3]$latch~combout  & ( (!\contator_process~0_combout ) # (\SNBP~input_o ) ) ) # ( !\NT_DISPLAY[3]$latch~combout  & ( (!\contator_process~0_combout  & !\SNBP~input_o ) ) )
+
+	.dataa(gnd),
+	.datab(!\contator_process~0_combout ),
+	.datac(!\SNBP~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\NT_DISPLAY[3]$latch~combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\NT_DISPLAY[3]$latch~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \NT_DISPLAY[3]$latch .extended_lut = "off";
+defparam \NT_DISPLAY[3]$latch .lut_mask = 64'hC0C0C0C0CFCFCFCF;
+defparam \NT_DISPLAY[3]$latch .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X48_Y26_N0
 cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
 // Equation(s):
 

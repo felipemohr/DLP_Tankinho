@@ -2,20 +2,20 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'SNAT'
-Slack : 0.311
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'SNBP'
+Slack : 0.368
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'SNAT'
-Slack : 0.329
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'SNBP'
+Slack : 0.363
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'SNAT'
-Slack : 0.099
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'SNBP'
+Slack : 0.021
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'SNAT'
-Slack : 0.085
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'SNBP'
+Slack : 0.026
 TNS   : 0.000
 
 ------------------------------------------------------------

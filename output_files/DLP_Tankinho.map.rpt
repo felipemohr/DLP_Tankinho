@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLP_Tankinho
-Wed May 18 15:12:49 2022
+Wed Jun  8 15:28:43 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -44,14 +44,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 18 15:12:49 2022       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun  8 15:28:43 2022       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; DLP_Tankinho                                ;
 ; Top-level Entity Name           ; DLP_Tankinho                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 15                                          ;
+; Total pins                      ; 14                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
 ; Top-level entity name                                                           ; DLP_Tankinho       ; DLP_Tankinho       ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -176,31 +176,31 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------------+--------------------------------------------+---------+
 
 
-+------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                      ;
-+---------------------------------------------+--------------------+
-; Resource                                    ; Usage              ;
-+---------------------------------------------+--------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2                  ;
-;                                             ;                    ;
-; Combinational ALUT usage for logic          ; 4                  ;
-;     -- 7 input functions                    ; 0                  ;
-;     -- 6 input functions                    ; 0                  ;
-;     -- 5 input functions                    ; 0                  ;
-;     -- 4 input functions                    ; 0                  ;
-;     -- <=3 input functions                  ; 4                  ;
-;                                             ;                    ;
-; Dedicated logic registers                   ; 0                  ;
-;                                             ;                    ;
-; I/O pins                                    ; 15                 ;
-;                                             ;                    ;
-; Total DSP Blocks                            ; 0                  ;
-;                                             ;                    ;
-; Maximum fan-out node                        ; contator_process~0 ;
-; Maximum fan-out                             ; 2                  ;
-; Total fan-out                               ; 27                 ;
-; Average fan-out                             ; 0.79               ;
-+---------------------------------------------+--------------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 5          ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 9          ;
+;     -- 7 input functions                    ; 0          ;
+;     -- 6 input functions                    ; 0          ;
+;     -- 5 input functions                    ; 0          ;
+;     -- 4 input functions                    ; 0          ;
+;     -- <=3 input functions                  ; 9          ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 14         ;
+;                                             ;            ;
+; Total DSP Blocks                            ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; SNBP~input ;
+; Maximum fan-out                             ; 7          ;
+; Total fan-out                               ; 47         ;
+; Average fan-out                             ; 1.27       ;
++---------------------------------------------+------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -208,7 +208,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
-; |DLP_Tankinho              ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 15   ; 0            ; |DLP_Tankinho       ; DLP_Tankinho ; work         ;
+; |DLP_Tankinho              ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 14   ; 0            ; |DLP_Tankinho       ; DLP_Tankinho ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -218,9 +218,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
 +----------------------------------------------------+---------------------+------------------------+
-; ASNBP$latch                                        ; contator_process    ; yes                    ;
-; ALNBP$latch                                        ; contator_process    ; yes                    ;
-; Number of user-specified and inferred latches = 2  ;                     ;                        ;
+; BH$latch                                           ; GND                 ; yes                    ;
+; NT_DISPLAY[6]$latch                                ; SNBP                ; yes                    ;
+; NT_DISPLAY[5]$latch                                ; SNBP                ; yes                    ;
+; NT_DISPLAY[4]$latch                                ; SNBP                ; yes                    ;
+; NT_DISPLAY[3]$latch                                ; SNBP                ; yes                    ;
+; NT_DISPLAY[2]$latch                                ; SNBP                ; yes                    ;
+; NT_DISPLAY[1]$latch                                ; SNBP                ; yes                    ;
+; NT_DISPLAY[0]$latch                                ; SNBP                ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -245,15 +251,14 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 5                           ;
-;     normal            ; 5                           ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 2                           ;
-; boundary_port         ; 15                          ;
+; arriav_lcell_comb     ; 9                           ;
+;     normal            ; 9                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 5                           ;
+; boundary_port         ; 14                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.64                        ;
+; Average LUT depth     ; 1.56                        ;
 +-----------------------+-----------------------------+
 
 
@@ -272,7 +277,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed May 18 15:12:40 2022
+    Info: Processing started: Wed Jun  8 15:28:35 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLP_Tankinho -c DLP_Tankinho
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -280,34 +285,31 @@ Warning (12125): Using design file DLP_Tankinho.vhd, which is not specified as a
     Info (12022): Found design unit 1: DLP_Tankinho-behavior File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 30
     Info (12023): Found entity 1: DLP_Tankinho File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 5
 Info (12127): Elaborating entity "DLP_Tankinho" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at DLP_Tankinho.vhd(24): used implicit default value for signal "NT_DISPLAY" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 24
-Warning (10631): VHDL Process Statement warning at DLP_Tankinho.vhd(33): inferring latch(es) for signal or variable "ASNBP", which holds its previous value in one or more paths through the process File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
-Warning (10631): VHDL Process Statement warning at DLP_Tankinho.vhd(33): inferring latch(es) for signal or variable "ALNBP", which holds its previous value in one or more paths through the process File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
 Warning (10631): VHDL Process Statement warning at DLP_Tankinho.vhd(33): inferring latch(es) for signal or variable "BH", which holds its previous value in one or more paths through the process File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+Warning (10631): VHDL Process Statement warning at DLP_Tankinho.vhd(33): inferring latch(es) for signal or variable "NT_DISPLAY", which holds its previous value in one or more paths through the process File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+Info (10041): Inferred latch for "NT_DISPLAY[6]" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+Info (10041): Inferred latch for "NT_DISPLAY[5]" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+Info (10041): Inferred latch for "NT_DISPLAY[4]" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+Info (10041): Inferred latch for "NT_DISPLAY[3]" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+Info (10041): Inferred latch for "NT_DISPLAY[2]" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+Info (10041): Inferred latch for "NT_DISPLAY[1]" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+Info (10041): Inferred latch for "NT_DISPLAY[0]" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
 Info (10041): Inferred latch for "BH" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
-Info (10041): Inferred latch for "ALNBP" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
-Info (10041): Inferred latch for "ASNBP" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "BH" is stuck at GND File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 17
-    Warning (13410): Pin "NT_DISPLAY[7]" is stuck at GND File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 24
-    Warning (13410): Pin "NT_DISPLAY[6]" is stuck at GND File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 24
-    Warning (13410): Pin "NT_DISPLAY[5]" is stuck at GND File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 24
-    Warning (13410): Pin "NT_DISPLAY[4]" is stuck at GND File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 24
-    Warning (13410): Pin "NT_DISPLAY[3]" is stuck at GND File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 24
-    Warning (13410): Pin "NT_DISPLAY[2]" is stuck at GND File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 24
-    Warning (13410): Pin "NT_DISPLAY[1]" is stuck at GND File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 24
-    Warning (13410): Pin "NT_DISPLAY[0]" is stuck at GND File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 24
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "NT_DISPLAY[1]$latch" merged with LATCH primitive "NT_DISPLAY[5]$latch" File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+    Info (13026): Duplicate LATCH primitive "NT_DISPLAY[0]$latch" merged with LATCH primitive "NT_DISPLAY[5]$latch" File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+    Info (13026): Duplicate LATCH primitive "NT_DISPLAY[2]$latch" merged with LATCH primitive "NT_DISPLAY[4]$latch" File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 19 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 23 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 478 megabytes
-    Info: Processing ended: Wed May 18 15:12:49 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:21
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 9 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 476 megabytes
+    Info: Processing ended: Wed Jun  8 15:28:43 2022
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:20
 
 

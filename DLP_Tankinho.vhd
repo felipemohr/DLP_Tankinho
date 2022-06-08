@@ -21,7 +21,7 @@ entity DLP_Tankinho is
 		ALNBP : out std_logic; -- Alarme Luminoso Nivel Baixo Poco
 		
 		-- Indicador Visual
-		NT_DISPLAY : out std_logic_vector(0 to 7) -- Display Nivel Tanque
+		NT_DISPLAY : out std_logic_vector(0 to 6) -- Display Nivel Tanque
 		
 	);
 end DLP_Tankinho;
@@ -33,24 +33,26 @@ begin
 	contator_process : process (SNBP, SNBT, SNAT, ALNBP_CLK)
 	begin
 
-		-- Verifica se tanque em nível baixo
-		if (SNBT='1' AND SNAT='0') then
 				
 			-- Verifica se há água no poço
 			if (SNBP='0') then
 				-- Mantem alarmes desligados
 				ASNBP <= '0';
 				ALNBP <= '0';
+
+				if(SNAT='0') then
+					BH <= '0';
+					NT_DISPLAY <= "0001001";
 				
-				-- Liga bomba
-				BH <= '1';
 				-- Mantem bomba ligada enquanto tanque não está cheio
-				while (SNAT = '0') loop
-				end loop;
-
-				-- Desliga bomba
-				BH <= '0';
-
+				elsif(SNAT='1' and SNBT='1') then
+					BH <= '1';
+					NT_DISPLAY <= "1110111";
+					
+				elsif(SNAT='1' and SNBT='0') then
+					NT_DISPLAY <= "1101010";
+				end if;
+				
 			else
 				-- Desliga bomba e aciona alarmes
 				BH <= '0';
@@ -59,8 +61,6 @@ begin
 				ALNBP <= ALNBP_CLK;
 
 			end if;
-			
-		end if;
 	
 	end process;
 	
