@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DLP_Tankinho
-Wed Jun  8 15:28:43 2022
+Sat Jun 11 02:46:25 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun  8 15:28:43 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sat Jun 11 02:46:25 2022       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; DLP_Tankinho                                ;
 ; Top-level Entity Name           ; DLP_Tankinho                                ;
@@ -183,12 +183,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+------------+
 ; Estimate of Logic utilization (ALMs needed) ; 5          ;
 ;                                             ;            ;
-; Combinational ALUT usage for logic          ; 9          ;
+; Combinational ALUT usage for logic          ; 10         ;
 ;     -- 7 input functions                    ; 0          ;
 ;     -- 6 input functions                    ; 0          ;
 ;     -- 5 input functions                    ; 0          ;
 ;     -- 4 input functions                    ; 0          ;
-;     -- <=3 input functions                  ; 9          ;
+;     -- <=3 input functions                  ; 10         ;
 ;                                             ;            ;
 ; Dedicated logic registers                   ; 0          ;
 ;                                             ;            ;
@@ -197,9 +197,9 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0          ;
 ;                                             ;            ;
 ; Maximum fan-out node                        ; SNBP~input ;
-; Maximum fan-out                             ; 7          ;
-; Total fan-out                               ; 47         ;
-; Average fan-out                             ; 1.27       ;
+; Maximum fan-out                             ; 8          ;
+; Total fan-out                               ; 50         ;
+; Average fan-out                             ; 1.32       ;
 +---------------------------------------------+------------+
 
 
@@ -208,7 +208,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
-; |DLP_Tankinho              ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 14   ; 0            ; |DLP_Tankinho       ; DLP_Tankinho ; work         ;
+; |DLP_Tankinho              ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 14   ; 0            ; |DLP_Tankinho       ; DLP_Tankinho ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -251,14 +251,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 9                           ;
-;     normal            ; 9                           ;
+; arriav_lcell_comb     ; 11                          ;
+;     normal            ; 11                          ;
+;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 4                           ;
-;         3 data inputs ; 5                           ;
+;         3 data inputs ; 6                           ;
 ; boundary_port         ; 14                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.56                        ;
+; Average LUT depth     ; 1.55                        ;
 +-----------------------+-----------------------------+
 
 
@@ -277,7 +278,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jun  8 15:28:35 2022
+    Info: Processing started: Sat Jun 11 02:46:17 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DLP_Tankinho -c DLP_Tankinho
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -296,19 +297,19 @@ Info (10041): Inferred latch for "NT_DISPLAY[1]" at DLP_Tankinho.vhd(33) File: /
 Info (10041): Inferred latch for "NT_DISPLAY[0]" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
 Info (10041): Inferred latch for "BH" at DLP_Tankinho.vhd(33) File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "NT_DISPLAY[1]$latch" merged with LATCH primitive "NT_DISPLAY[5]$latch" File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
     Info (13026): Duplicate LATCH primitive "NT_DISPLAY[0]$latch" merged with LATCH primitive "NT_DISPLAY[5]$latch" File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
+    Info (13026): Duplicate LATCH primitive "NT_DISPLAY[1]$latch" merged with LATCH primitive "NT_DISPLAY[5]$latch" File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
     Info (13026): Duplicate LATCH primitive "NT_DISPLAY[2]$latch" merged with LATCH primitive "NT_DISPLAY[4]$latch" File: /home/felipe/DLP_Tankinho/DLP_Tankinho.vhd Line: 33
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 23 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 24 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 9 logic cells
+    Info (21061): Implemented 10 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 476 megabytes
-    Info: Processing ended: Wed Jun  8 15:28:43 2022
+    Info: Peak virtual memory: 474 megabytes
+    Info: Processing ended: Sat Jun 11 02:46:25 2022
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:20
 

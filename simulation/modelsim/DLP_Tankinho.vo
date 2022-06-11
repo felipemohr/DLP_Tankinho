@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-// DATE "06/08/2022 15:29:09"
+// DATE "06/11/2022 02:46:50"
 
 // 
 // Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -48,9 +48,9 @@ output 	ALNBP;
 output 	[0:6] NT_DISPLAY;
 
 // Design Ports Information
-// BH	=>  Location: PIN_AA2,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ASNBP	=>  Location: PIN_L1,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ALNBP	=>  Location: PIN_L2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// BH	=>  Location: PIN_D17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ASNBP	=>  Location: PIN_B16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ALNBP	=>  Location: PIN_AA2,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // NT_DISPLAY[6]	=>  Location: PIN_AA22,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // NT_DISPLAY[5]	=>  Location: PIN_Y21,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // NT_DISPLAY[4]	=>  Location: PIN_Y22,	 I/O Standard: 2.5 V,	 Current Strength: Default
@@ -58,10 +58,10 @@ output 	[0:6] NT_DISPLAY;
 // NT_DISPLAY[2]	=>  Location: PIN_W22,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // NT_DISPLAY[1]	=>  Location: PIN_V21,	 I/O Standard: 2.5 V,	 Current Strength: Default
 // NT_DISPLAY[0]	=>  Location: PIN_U21,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// SNBP	=>  Location: PIN_U13,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// ALNBP_CLK	=>  Location: PIN_U7,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// SNAT	=>  Location: PIN_T13,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// SNBT	=>  Location: PIN_V13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SNBP	=>  Location: PIN_R21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ALNBP_CLK	=>  Location: PIN_M22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SNBT	=>  Location: PIN_N21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SNAT	=>  Location: PIN_N20,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 wire gnd;
@@ -76,9 +76,10 @@ tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
 wire \~QUARTUS_CREATED_GND~I_combout ;
-wire \SNBT~input_o ;
 wire \SNBP~input_o ;
 wire \SNAT~input_o ;
+wire \comb~1_combout ;
+wire \SNBT~input_o ;
 wire \comb~0_combout ;
 wire \BH$latch~combout ;
 wire \ALNBP_CLK~input_o ;
@@ -86,12 +87,12 @@ wire \ALNBP~0_combout ;
 wire \NT_DISPLAY[6]~0_combout ;
 wire \NT_DISPLAY[6]$latch~combout ;
 wire \NT_DISPLAY[5]$latch~combout ;
-wire \contator_process~0_combout ;
+wire \comb~2_combout ;
 wire \NT_DISPLAY[4]$latch~combout ;
 wire \NT_DISPLAY[3]$latch~combout ;
 
 
-// Location: IOOBUF_X0_Y18_N79
+// Location: IOOBUF_X50_Y45_N2
 cyclonev_io_obuf \BH~output (
 	.i(\BH$latch~combout ),
 	.oe(vcc),
@@ -107,9 +108,9 @@ defparam \BH~output .open_drain_output = "false";
 defparam \BH~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X0_Y20_N56
+// Location: IOOBUF_X52_Y45_N36
 cyclonev_io_obuf \ASNBP~output (
-	.i(\SNBP~input_o ),
+	.i(!\SNBP~input_o ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -123,7 +124,7 @@ defparam \ASNBP~output .open_drain_output = "false";
 defparam \ASNBP~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOOBUF_X0_Y20_N39
+// Location: IOOBUF_X0_Y18_N79
 cyclonev_io_obuf \ALNBP~output (
 	.i(\ALNBP~0_combout ),
 	.oe(vcc),
@@ -251,18 +252,7 @@ defparam \NT_DISPLAY[0]~output .open_drain_output = "false";
 defparam \NT_DISPLAY[0]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-// Location: IOIBUF_X33_Y0_N58
-cyclonev_io_ibuf \SNBT~input (
-	.i(SNBT),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\SNBT~input_o ));
-// synopsys translate_off
-defparam \SNBT~input .bus_hold = "false";
-defparam \SNBT~input .simulate_z_as = "z";
-// synopsys translate_on
-
-// Location: IOIBUF_X33_Y0_N41
+// Location: IOIBUF_X54_Y16_N38
 cyclonev_io_ibuf \SNBP~input (
 	.i(SNBP),
 	.ibar(gnd),
@@ -273,7 +263,7 @@ defparam \SNBP~input .bus_hold = "false";
 defparam \SNBP~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: IOIBUF_X34_Y0_N1
+// Location: IOIBUF_X54_Y18_N78
 cyclonev_io_ibuf \SNAT~input (
 	.i(SNAT),
 	.ibar(gnd),
@@ -284,16 +274,51 @@ defparam \SNAT~input .bus_hold = "false";
 defparam \SNAT~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: MLABCELL_X34_Y1_N3
-cyclonev_lcell_comb \comb~0 (
+// Location: LABCELL_X53_Y16_N39
+cyclonev_lcell_comb \comb~1 (
 // Equation(s):
-// \comb~0_combout  = ( \SNAT~input_o  & ( \SNBP~input_o  ) ) # ( !\SNAT~input_o  )
+// \comb~1_combout  = ( \SNAT~input_o  ) # ( !\SNAT~input_o  & ( !\SNBP~input_o  ) )
 
-	.dataa(!\SNBP~input_o ),
+	.dataa(gnd),
 	.datab(gnd),
-	.datac(gnd),
+	.datac(!\SNBP~input_o ),
 	.datad(gnd),
 	.datae(gnd),
+	.dataf(!\SNAT~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\comb~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \comb~1 .extended_lut = "off";
+defparam \comb~1 .lut_mask = 64'hF0F0F0F0FFFFFFFF;
+defparam \comb~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: IOIBUF_X54_Y18_N95
+cyclonev_io_ibuf \SNBT~input (
+	.i(SNBT),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\SNBT~input_o ));
+// synopsys translate_off
+defparam \SNBT~input .bus_hold = "false";
+defparam \SNBT~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LABCELL_X53_Y16_N0
+cyclonev_lcell_comb \comb~0 (
+// Equation(s):
+// \comb~0_combout  = ( !\SNBT~input_o  & ( !\SNAT~input_o  & ( \SNBP~input_o  ) ) )
+
+	.dataa(gnd),
+	.datab(!\SNBP~input_o ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(!\SNBT~input_o ),
 	.dataf(!\SNAT~input_o ),
 	.datag(gnd),
 	.cin(gnd),
@@ -304,17 +329,17 @@ cyclonev_lcell_comb \comb~0 (
 	.shareout());
 // synopsys translate_off
 defparam \comb~0 .extended_lut = "off";
-defparam \comb~0 .lut_mask = 64'hFFFFFFFF55555555;
+defparam \comb~0 .lut_mask = 64'h3333000000000000;
 defparam \comb~0 .shared_arith = "off";
 // synopsys translate_on
 
-// Location: MLABCELL_X34_Y1_N48
+// Location: LABCELL_X53_Y16_N24
 cyclonev_lcell_comb BH$latch(
 // Equation(s):
-// \BH$latch~combout  = ( !\comb~0_combout  & ( \BH$latch~combout  ) ) # ( !\comb~0_combout  & ( !\BH$latch~combout  & ( \SNBT~input_o  ) ) )
+// \BH$latch~combout  = ( !\comb~0_combout  & ( \BH$latch~combout  ) ) # ( !\comb~0_combout  & ( !\BH$latch~combout  & ( \comb~1_combout  ) ) )
 
 	.dataa(gnd),
-	.datab(!\SNBT~input_o ),
+	.datab(!\comb~1_combout ),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(!\comb~0_combout ),
@@ -332,7 +357,7 @@ defparam BH$latch.lut_mask = 64'h33330000FFFF0000;
 defparam BH$latch.shared_arith = "off";
 // synopsys translate_on
 
-// Location: IOIBUF_X10_Y0_N92
+// Location: IOIBUF_X54_Y19_N38
 cyclonev_io_ibuf \ALNBP_CLK~input (
 	.i(ALNBP_CLK),
 	.ibar(gnd),
@@ -343,13 +368,13 @@ defparam \ALNBP_CLK~input .bus_hold = "false";
 defparam \ALNBP_CLK~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: MLABCELL_X4_Y12_N33
+// Location: LABCELL_X53_Y19_N0
 cyclonev_lcell_comb \ALNBP~0 (
 // Equation(s):
-// \ALNBP~0_combout  = ( \ALNBP_CLK~input_o  & ( \SNBP~input_o  ) )
+// \ALNBP~0_combout  = ( \ALNBP_CLK~input_o  & ( !\SNBP~input_o  ) )
 
-	.dataa(!\SNBP~input_o ),
-	.datab(gnd),
+	.dataa(gnd),
+	.datab(!\SNBP~input_o ),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
@@ -363,20 +388,20 @@ cyclonev_lcell_comb \ALNBP~0 (
 	.shareout());
 // synopsys translate_off
 defparam \ALNBP~0 .extended_lut = "off";
-defparam \ALNBP~0 .lut_mask = 64'h0000000055555555;
+defparam \ALNBP~0 .lut_mask = 64'h00000000CCCCCCCC;
 defparam \ALNBP~0 .shared_arith = "off";
 // synopsys translate_on
 
-// Location: MLABCELL_X34_Y1_N6
+// Location: LABCELL_X53_Y16_N15
 cyclonev_lcell_comb \NT_DISPLAY[6]~0 (
 // Equation(s):
-// \NT_DISPLAY[6]~0_combout  = ( \SNAT~input_o  & ( !\SNBT~input_o  ) )
+// \NT_DISPLAY[6]~0_combout  = ( \SNBT~input_o  & ( !\SNAT~input_o  ) )
 
 	.dataa(gnd),
-	.datab(!\SNBT~input_o ),
+	.datab(gnd),
 	.datac(gnd),
 	.datad(gnd),
-	.datae(gnd),
+	.datae(!\SNBT~input_o ),
 	.dataf(!\SNAT~input_o ),
 	.datag(gnd),
 	.cin(gnd),
@@ -387,21 +412,21 @@ cyclonev_lcell_comb \NT_DISPLAY[6]~0 (
 	.shareout());
 // synopsys translate_off
 defparam \NT_DISPLAY[6]~0 .extended_lut = "off";
-defparam \NT_DISPLAY[6]~0 .lut_mask = 64'h00000000CCCCCCCC;
+defparam \NT_DISPLAY[6]~0 .lut_mask = 64'h0000FFFF00000000;
 defparam \NT_DISPLAY[6]~0 .shared_arith = "off";
 // synopsys translate_on
 
-// Location: MLABCELL_X34_Y1_N24
+// Location: LABCELL_X53_Y16_N30
 cyclonev_lcell_comb \NT_DISPLAY[6]$latch (
 // Equation(s):
-// \NT_DISPLAY[6]$latch~combout  = ( \NT_DISPLAY[6]$latch~combout  & ( (!\NT_DISPLAY[6]~0_combout ) # (\SNBP~input_o ) ) ) # ( !\NT_DISPLAY[6]$latch~combout  & ( (!\NT_DISPLAY[6]~0_combout  & !\SNBP~input_o ) ) )
+// \NT_DISPLAY[6]$latch~combout  = ( \SNBP~input_o  & ( !\NT_DISPLAY[6]~0_combout  ) ) # ( !\SNBP~input_o  & ( \NT_DISPLAY[6]$latch~combout  ) )
 
 	.dataa(gnd),
 	.datab(!\NT_DISPLAY[6]~0_combout ),
-	.datac(!\SNBP~input_o ),
-	.datad(gnd),
+	.datac(gnd),
+	.datad(!\NT_DISPLAY[6]$latch~combout ),
 	.datae(gnd),
-	.dataf(!\NT_DISPLAY[6]$latch~combout ),
+	.dataf(!\SNBP~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -411,21 +436,21 @@ cyclonev_lcell_comb \NT_DISPLAY[6]$latch (
 	.shareout());
 // synopsys translate_off
 defparam \NT_DISPLAY[6]$latch .extended_lut = "off";
-defparam \NT_DISPLAY[6]$latch .lut_mask = 64'hC0C0C0C0CFCFCFCF;
+defparam \NT_DISPLAY[6]$latch .lut_mask = 64'h00FF00FFCCCCCCCC;
 defparam \NT_DISPLAY[6]$latch .shared_arith = "off";
 // synopsys translate_on
 
-// Location: MLABCELL_X34_Y1_N33
+// Location: LABCELL_X53_Y16_N9
 cyclonev_lcell_comb \NT_DISPLAY[5]$latch (
 // Equation(s):
-// \NT_DISPLAY[5]$latch~combout  = ( \NT_DISPLAY[5]$latch~combout  & ( (\SNBP~input_o ) # (\SNAT~input_o ) ) ) # ( !\NT_DISPLAY[5]$latch~combout  & ( (\SNAT~input_o  & !\SNBP~input_o ) ) )
+// \NT_DISPLAY[5]$latch~combout  = ( \NT_DISPLAY[5]$latch~combout  & ( \SNBP~input_o  & ( !\SNAT~input_o  ) ) ) # ( !\NT_DISPLAY[5]$latch~combout  & ( \SNBP~input_o  & ( !\SNAT~input_o  ) ) ) # ( \NT_DISPLAY[5]$latch~combout  & ( !\SNBP~input_o  ) )
 
 	.dataa(gnd),
 	.datab(gnd),
 	.datac(!\SNAT~input_o ),
-	.datad(!\SNBP~input_o ),
-	.datae(gnd),
-	.dataf(!\NT_DISPLAY[5]$latch~combout ),
+	.datad(gnd),
+	.datae(!\NT_DISPLAY[5]$latch~combout ),
+	.dataf(!\SNBP~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -435,43 +460,42 @@ cyclonev_lcell_comb \NT_DISPLAY[5]$latch (
 	.shareout());
 // synopsys translate_off
 defparam \NT_DISPLAY[5]$latch .extended_lut = "off";
-defparam \NT_DISPLAY[5]$latch .lut_mask = 64'h0F000F000FFF0FFF;
+defparam \NT_DISPLAY[5]$latch .lut_mask = 64'h0000FFFFF0F0F0F0;
 defparam \NT_DISPLAY[5]$latch .shared_arith = "off";
 // synopsys translate_on
 
-// Location: MLABCELL_X34_Y1_N15
-cyclonev_lcell_comb \contator_process~0 (
+// Location: LABCELL_X53_Y16_N18
+cyclonev_lcell_comb \comb~2 (
 // Equation(s):
-// \contator_process~0_combout  = ( \SNAT~input_o  & ( \SNBT~input_o  ) )
+// \comb~2_combout  = ( \SNBT~input_o  & ( \SNAT~input_o  ) ) # ( !\SNBT~input_o  & ( \SNAT~input_o  ) ) # ( \SNBT~input_o  & ( !\SNAT~input_o  ) )
 
 	.dataa(gnd),
 	.datab(gnd),
-	.datac(!\SNBT~input_o ),
+	.datac(gnd),
 	.datad(gnd),
-	.datae(gnd),
+	.datae(!\SNBT~input_o ),
 	.dataf(!\SNAT~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\contator_process~0_combout ),
+	.combout(\comb~2_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \contator_process~0 .extended_lut = "off";
-defparam \contator_process~0 .lut_mask = 64'h000000000F0F0F0F;
-defparam \contator_process~0 .shared_arith = "off";
+defparam \comb~2 .extended_lut = "off";
+defparam \comb~2 .lut_mask = 64'h0000FFFFFFFFFFFF;
+defparam \comb~2 .shared_arith = "off";
 // synopsys translate_on
 
-// Location: MLABCELL_X34_Y1_N39
+// Location: LABCELL_X53_Y16_N42
 cyclonev_lcell_comb \NT_DISPLAY[4]$latch (
 // Equation(s):
-// \NT_DISPLAY[4]$latch~combout  = ( \NT_DISPLAY[4]$latch~combout  & ( \SNBP~input_o  ) ) # ( \NT_DISPLAY[4]$latch~combout  & ( !\SNBP~input_o  & ( \contator_process~0_combout  ) ) ) # ( !\NT_DISPLAY[4]$latch~combout  & ( !\SNBP~input_o  & ( 
-// \contator_process~0_combout  ) ) )
+// \NT_DISPLAY[4]$latch~combout  = ( \NT_DISPLAY[4]$latch~combout  & ( \SNBP~input_o  & ( !\comb~2_combout  ) ) ) # ( !\NT_DISPLAY[4]$latch~combout  & ( \SNBP~input_o  & ( !\comb~2_combout  ) ) ) # ( \NT_DISPLAY[4]$latch~combout  & ( !\SNBP~input_o  ) )
 
 	.dataa(gnd),
 	.datab(gnd),
-	.datac(!\contator_process~0_combout ),
+	.datac(!\comb~2_combout ),
 	.datad(gnd),
 	.datae(!\NT_DISPLAY[4]$latch~combout ),
 	.dataf(!\SNBP~input_o ),
@@ -484,21 +508,21 @@ cyclonev_lcell_comb \NT_DISPLAY[4]$latch (
 	.shareout());
 // synopsys translate_off
 defparam \NT_DISPLAY[4]$latch .extended_lut = "off";
-defparam \NT_DISPLAY[4]$latch .lut_mask = 64'h0F0F0F0F0000FFFF;
+defparam \NT_DISPLAY[4]$latch .lut_mask = 64'h0000FFFFF0F0F0F0;
 defparam \NT_DISPLAY[4]$latch .shared_arith = "off";
 // synopsys translate_on
 
-// Location: MLABCELL_X34_Y1_N42
+// Location: LABCELL_X53_Y16_N51
 cyclonev_lcell_comb \NT_DISPLAY[3]$latch (
 // Equation(s):
-// \NT_DISPLAY[3]$latch~combout  = ( \NT_DISPLAY[3]$latch~combout  & ( (!\contator_process~0_combout ) # (\SNBP~input_o ) ) ) # ( !\NT_DISPLAY[3]$latch~combout  & ( (!\contator_process~0_combout  & !\SNBP~input_o ) ) )
+// \NT_DISPLAY[3]$latch~combout  = ( \NT_DISPLAY[3]$latch~combout  & ( \SNBP~input_o  & ( \comb~2_combout  ) ) ) # ( !\NT_DISPLAY[3]$latch~combout  & ( \SNBP~input_o  & ( \comb~2_combout  ) ) ) # ( \NT_DISPLAY[3]$latch~combout  & ( !\SNBP~input_o  ) )
 
-	.dataa(gnd),
-	.datab(!\contator_process~0_combout ),
-	.datac(!\SNBP~input_o ),
+	.dataa(!\comb~2_combout ),
+	.datab(gnd),
+	.datac(gnd),
 	.datad(gnd),
-	.datae(gnd),
-	.dataf(!\NT_DISPLAY[3]$latch~combout ),
+	.datae(!\NT_DISPLAY[3]$latch~combout ),
+	.dataf(!\SNBP~input_o ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -508,11 +532,11 @@ cyclonev_lcell_comb \NT_DISPLAY[3]$latch (
 	.shareout());
 // synopsys translate_off
 defparam \NT_DISPLAY[3]$latch .extended_lut = "off";
-defparam \NT_DISPLAY[3]$latch .lut_mask = 64'hC0C0C0C0CFCFCFCF;
+defparam \NT_DISPLAY[3]$latch .lut_mask = 64'h0000FFFF55555555;
 defparam \NT_DISPLAY[3]$latch .shared_arith = "off";
 // synopsys translate_on
 
-// Location: LABCELL_X48_Y26_N0
+// Location: LABCELL_X7_Y1_N0
 cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
 // Equation(s):
 

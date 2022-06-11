@@ -52,11 +52,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "SNAT",
+					"name" : "SNBT",
 					"strict" : false
 				},
 				{
-					"name" : "SNBT",
+					"name" : "SNAT",
 					"strict" : false
 				}
 			]

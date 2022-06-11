@@ -1,11 +1,11 @@
-Fitter Status : Successful - Wed Jun  8 15:28:59 2022
+Fitter Status : Successful - Sat Jun 11 02:46:40 2022
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : DLP_Tankinho
 Top-level Entity Name : DLP_Tankinho
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 5 / 18,480 ( < 1 % )
+Logic utilization (in ALMs) : 6 / 18,480 ( < 1 % )
 Total registers : 0
 Total pins : 14 / 224 ( 6 % )
 Total virtual pins : 0

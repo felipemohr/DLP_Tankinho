@@ -32,30 +32,30 @@ begin
 
 	contator_process : process (SNBP, SNBT, SNAT, ALNBP_CLK)
 	begin
-
-				
+			
 			-- Verifica se há água no poço
-			if (SNBP='0') then
+			if (SNBP='1') then
 				-- Mantem alarmes desligados
 				ASNBP <= '0';
 				ALNBP <= '0';
 
-				if(SNAT='0') then
-					BH <= '0';
+				if(SNAT='1') then
+					-- Desliga bomba
+					BH <= '1';
 					NT_DISPLAY <= "0001001";
 				
 				-- Mantem bomba ligada enquanto tanque não está cheio
-				elsif(SNAT='1' and SNBT='1') then
-					BH <= '1';
+				elsif(SNAT='0' and SNBT='0') then
+					BH <= '0';
 					NT_DISPLAY <= "1110111";
 					
-				elsif(SNAT='1' and SNBT='0') then
+				elsif(SNAT='0' and SNBT='1') then
 					NT_DISPLAY <= "1101010";
 				end if;
 				
 			else
 				-- Desliga bomba e aciona alarmes
-				BH <= '0';
+				BH <= '1';
 
 				ASNBP <= '1';
 				ALNBP <= ALNBP_CLK;
