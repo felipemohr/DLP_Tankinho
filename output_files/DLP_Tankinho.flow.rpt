@@ -1,5 +1,5 @@
 Flow report for DLP_Tankinho
-Sat Jun 11 02:46:50 2022
+Mon Jun 13 11:08:23 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Jun 11 02:46:50 2022       ;
+; Flow Status                     ; Successful - Mon Jun 13 11:08:23 2022       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; DLP_Tankinho                                ;
 ; Top-level Entity Name           ; DLP_Tankinho                                ;
@@ -106,7 +106,13 @@ https://fpgasoftware.intel.com/eula.
 ; Assembler            ; 00:00:03     ; 1.0                     ; 479 MB              ; 00:00:03                           ;
 ; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 708 MB              ; 00:00:04                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 667 MB              ; 00:00:01                           ;
-; Total                ; 00:00:30     ; --                      ; --                  ; 00:00:52                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 661 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 666 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 661 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 665 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 661 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 665 MB              ; 00:00:01                           ;
+; Total                ; 00:00:34     ; --                      ; --                  ; 00:00:58                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -120,6 +126,12 @@ https://fpgasoftware.intel.com/eula.
 ; Assembler            ; felipe           ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
 ; Timing Analyzer      ; felipe           ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
 ; EDA Netlist Writer   ; felipe           ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; felipe           ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; felipe           ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; felipe           ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; felipe           ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; felipe           ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
+; EDA Netlist Writer   ; felipe           ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
 +----------------------+------------------+----------------+------------+----------------+
 
 
@@ -131,6 +143,12 @@ quartus_fit --read_settings_files=off --write_settings_files=off DLP_Tankinho -c
 quartus_asm --read_settings_files=off --write_settings_files=off DLP_Tankinho -c DLP_Tankinho
 quartus_sta DLP_Tankinho -c DLP_Tankinho
 quartus_eda --read_settings_files=off --write_settings_files=off DLP_Tankinho -c DLP_Tankinho
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off DLP_Tankinho -c DLP_Tankinho --vector_source=/home/felipe/DLP_Tankinho/Waveform.vwf --testbench_file=/home/felipe/DLP_Tankinho/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/felipe/DLP_Tankinho/simulation/qsim/ DLP_Tankinho -c DLP_Tankinho
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off DLP_Tankinho -c DLP_Tankinho --vector_source=/home/felipe/DLP_Tankinho/Waveform.vwf --testbench_file=/home/felipe/DLP_Tankinho/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/felipe/DLP_Tankinho/simulation/qsim/ DLP_Tankinho -c DLP_Tankinho
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off DLP_Tankinho -c DLP_Tankinho --vector_source=/home/felipe/DLP_Tankinho/Waveform.vwf --testbench_file=/home/felipe/DLP_Tankinho/simulation/qsim/Waveform.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/felipe/DLP_Tankinho/simulation/qsim/ DLP_Tankinho -c DLP_Tankinho
 
 
 
